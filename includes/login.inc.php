@@ -12,22 +12,26 @@ if(isset($_POST['Nume']) && !empty($_POST['Nume']) && isset($_POST['Parola']) &&
     $hash = $row['Parola'];
     $check = password_verify($password, $hash);
 
-    if($check == 0){
-        header("Location: ../login.php?info=gresit");
-        die();
-    }else{
+    if($check){
+
         $sql = "SELECT * FROM `accounts` WHERE Username='$username' AND Parola='$hash'";
         $result = mysqli_query($conectare, $sql);
         if(!$row = $result->fetch_assoc()){
             echo 'Acest cont nu a fost creat.';
+            die();
         }else{
-            $_SESSION['id'] = $row['id'];
+            $_SESSION['id'] = $row['ID'];
             $_SESSION['username'] = $row['Username'];
             $_SESSION['nume'] = $row['Nume'];
             $_SESSION['prenume'] = $row['Prenume'];
             $_SESSION['email'] = $row['Email'];
         }
         header("Location: ../login.php");
+    }else{
+        echo $password;
+        die();
+        header("Location: ../login.php?info=gresit");
+        die();
     }
 }else{
     header("Location: ../login.php?info=incomplet");

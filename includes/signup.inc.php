@@ -7,7 +7,8 @@ $Nume = $_POST['Nume'];
 $Prenume = $_POST['Prenume'];
 $Email = $_POST['emailaddress'];
 $Parola = $_POST['Parola'];
-$password_hashed = password_hash('$Parola', PASSWORD_DEFAULT);
+
+$password_hashed = password_hash($Parola, PASSWORD_DEFAULT);
 
 $sql = "SELECT Username FROM accounts WHERE Username ='$Username'";
 $result = mysqli_query($conectare, $sql);
