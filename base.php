@@ -45,6 +45,10 @@ session_start();
             transition: all .3s;
         }
 
+        a:hover{
+            font-size: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -62,14 +66,21 @@ session_start();
                     if(!isset($_SESSION['id'])){
                         echo '
                             <li class="nav-item">
-                                <a class="nav-link" href="login.php">Login</a>
+                                <a class="navbar-brand" href="login.php">Login</a>
                             </li>
             
                             <li class="nav-item">
-                                <a class="nav-link" href="register.php">Register</a>
+                                <a class="navbar-brand" href="register.php">Register</a>
                             </li>';
                     } else {
                         echo '
+                           
+                        <form>
+                            <li >
+                                <a class="navbar-brand" href="settings.php">Settings</a>
+                            </li>
+                        </form>
+
                         <form method="post" action="includes/logout.inc.php">
                             <li >
                                 <input name="buton" class="p-2 bd-highlight" type="submit" value="Logout">
