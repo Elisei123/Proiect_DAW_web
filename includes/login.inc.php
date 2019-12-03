@@ -28,8 +28,6 @@ if(isset($_POST['Nume']) && !empty($_POST['Nume']) && isset($_POST['Parola']) &&
         }
         header("Location: ../login.php");
     }else{
-        echo $password;
-        die();
         header("Location: ../login.php?info=gresit");
         die();
     }

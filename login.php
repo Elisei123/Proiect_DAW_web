@@ -1,13 +1,12 @@
 <?php include "base.php"?>
 <title>Login</title>
-
 <?php
-
-    if(isset($_SESSION['id'])){
-        echo "Te-ai logat cu succes. Prenumele meu este " . $_SESSION['prenume'];
-    }
-
+//Redirectionare daca suntem logati;
+if(isset($_SESSION['id'])){
+    header("Location: index.php");
+}
 ?>
+
 
 <div class="container">
     <div style="padding-top: 10%;" class="spatiu"></div>

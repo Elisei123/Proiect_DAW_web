@@ -1,6 +1,13 @@
 <?php include "base.php"?>
 <title>Register</title>
 
+<?php
+//Redirectionare daca suntem logati;
+if(isset($_SESSION['id'])){
+    header("Location: index.php");
+}
+?>
+
 <style>
 
 

@@ -57,19 +57,32 @@ session_start();
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.php">Register</a>
-                </li>
+            <ul class="nav navbar-nav navbar-left" style="text-align: center">
+                <?php
+                    if(!isset($_SESSION['id'])){
+                        echo '
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php">Login</a>
+                            </li>
+            
+                            <li class="nav-item">
+                                <a class="nav-link" href="register.php">Register</a>
+                            </li>';
+                    } else {
+                        echo '
+                        <form method="post" action="includes/logout.inc.php">
+                            <li >
+                                <input name="buton" class="p-2 bd-highlight" type="submit" value="Logout">
+                            </li>
+                        </form>
+                        ';
+                     }
+                ?>
             </ul>
         </div>
+
     </nav>
 </div>
-
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
