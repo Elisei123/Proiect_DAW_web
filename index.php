@@ -11,7 +11,7 @@ if(isset($_SESSION['id'])) {
     <?php
     if(isset($_SESSION['id'])) {
         echo '
-            <div style=" margin-top: 20px; text-align: right"> Te-ai logat cu numele ' . ucfirst($_SESSION['prenume']) . '</div>
+            <div style=" margin-top: 20px; text-align: right"> Welcome, ' . ucfirst($_SESSION['prenume']) . '</div>
         ';
     }
     ?>

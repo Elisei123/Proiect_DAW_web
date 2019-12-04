@@ -45,10 +45,6 @@ session_start();
             transition: all .3s;
         }
 
-        a:hover{
-            font-size: 20px;
-        }
-
     </style>
 </head>
 <body>
@@ -61,7 +57,7 @@ session_start();
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="nav navbar-nav navbar-left" style="text-align: center">
+            <ul style="margin-left: 76%;" class="nav navbar-nav navbar-left" style="text-align: center">
                 <?php
                     if(!isset($_SESSION['id'])){
                         echo '
@@ -75,11 +71,9 @@ session_start();
                     } else {
                         echo '
                            
-                        <form>
                             <li >
                                 <a class="navbar-brand" href="settings.php">Settings</a>
                             </li>
-                        </form>
 
                         <form method="post" action="includes/logout.inc.php">
                             <li >
