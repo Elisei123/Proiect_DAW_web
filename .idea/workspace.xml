@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="978ce711-35dd-40e2-a3f3-d173ccaccd56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/settings.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/base.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,6 +91,7 @@
       <workItem from="1575193260309" duration="8547000" />
       <workItem from="1575213708215" duration="6357000" />
       <workItem from="1575439512176" duration="4290000" />
+      <workItem from="1575482203490" duration="3793000" />
     </task>
     <servers />
   </component>
@@ -103,7 +103,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
