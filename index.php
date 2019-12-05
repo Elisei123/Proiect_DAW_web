@@ -1,5 +1,4 @@
 <?php include "base.php"?>
-
 <?php
 
 if(isset($_SESSION['id'])) {

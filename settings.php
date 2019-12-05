@@ -1,5 +1,4 @@
 <?php include "base.php"; ?>
-
 <style>
     span{
         color: red;
