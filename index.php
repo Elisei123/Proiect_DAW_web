@@ -1,8 +1,7 @@
 <?php include "base.php"?>
 <?php
-
 if(isset($_SESSION['id'])) {
-    echo "<title>Salut " . ucfirst($_SESSION['prenume']) . "</title>";
+    echo "<title>Salut " . ucfirst($_SESSION['username']) . "</title>";
 }
 ?>
 
@@ -10,7 +9,7 @@ if(isset($_SESSION['id'])) {
     <?php
     if(isset($_SESSION['id'])) {
         echo '
-            <div style=" margin-top: 20px; text-align: right"> Welcome, ' . ucfirst($_SESSION['prenume']) . '</div>
+            <div style=" margin-top: 20px; text-align: right"> Welcome, ' . ucfirst($_SESSION['username']) . '</div>
         ';
     }
     ?>

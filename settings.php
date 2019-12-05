@@ -29,6 +29,14 @@
     </div>
 </div>
 
+<?php
+
+//TODO: Creaza si pt schimbare parola;
+// TODO: Verifica daca username si email se afla in baza de date;
+//TODO: !!! Atentie, se afla o singura data !!!;
+
+?>
+
 
 <script>
     function myFunction() {
