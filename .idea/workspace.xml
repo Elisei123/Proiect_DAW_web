@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="978ce711-35dd-40e2-a3f3-d173ccaccd56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -99,7 +100,8 @@
       <workItem from="1575568109474" duration="6605000" />
       <workItem from="1575746554964" duration="188000" />
       <workItem from="1575749924885" duration="316000" />
-      <workItem from="1575780411581" duration="295000" />
+      <workItem from="1575780411581" duration="1038000" />
+      <workItem from="1575833083614" duration="2020000" />
     </task>
     <servers />
   </component>
@@ -120,17 +122,17 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="805" y="311" key="FileChooserDialogImpl" timestamp="1575750238635">
+    <state x="805" y="311" key="FileChooserDialogImpl" timestamp="1575780764845">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112/2560.0.1680.1010@0.0.2048.1112" timestamp="1575750238635" />
-    <state x="533" y="198" key="SettingsEditor" timestamp="1575746738950">
+    <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112/2560.0.1680.1010@0.0.2048.1112" timestamp="1575780764845" />
+    <state x="728" y="314" key="SettingsEditor" timestamp="1575780804565">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="533" y="198" key="SettingsEditor/0.0.2048.1112/2560.0.1680.1010@0.0.2048.1112" timestamp="1575746738950" />
-    <state x="721" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1575749930919">
+    <state x="728" y="314" key="SettingsEditor/0.0.2048.1112/2560.0.1680.1010@0.0.2048.1112" timestamp="1575780804565" />
+    <state x="721" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1575833086586">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="721" y="380" key="com.intellij.ide.util.TipDialog/0.0.2048.1112/2560.0.1680.1010@0.0.2048.1112" timestamp="1575749930919" />
+    <state x="721" y="380" key="com.intellij.ide.util.TipDialog/0.0.2048.1112/2560.0.1680.1010@0.0.2048.1112" timestamp="1575833086586" />
   </component>
 </project>

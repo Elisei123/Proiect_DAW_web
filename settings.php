@@ -6,6 +6,19 @@
 </style>
 
 <div class="container">
+    <?php
+
+    if(isset($_GET['info']) && $_GET['info'] == 'identica'){
+        echo "<h1 style='color: red;'> Parola noua este identica cu parola veche. Alege alta.</h1>";
+    }else if(isset($_GET['info']) && $_GET['info'] == 'parola_schimbata'){
+        echo "<h1 style='color: green;'> Parola si datele au fost schimbate cu succes.</h1>";
+    }else if(isset($_GET['info']) && $_GET['info'] == 'parola_verificare_diferita'){
+        echo "<h1 style='color:red;'> Parola de verificare nu este identica cu parola noua.</h1>";
+    }else if(isset($_GET['info']) && $_GET['info'] == 'Modificate_doar_setarile'){
+        echo "<h1 style='color: green;'> Datele au fost schimbate cu succes.</h1>";
+    }
+
+    ?>
     <div style="margin-top: 10%" class="settings">
         <h3 style="margin: 10px;">Modifica datele personale: </h3>
         <form action="includes/settings.inc.php" method="post">
@@ -18,16 +31,17 @@
                 <br>
                 <p>Parola trebuie sa contina minim 6 litere. <span>*</span></p>
                 <h6>Parola veche <span>*</span></h6>
-                <input pattern=".{6,}" name="parola_veche" type="text" v>
+                <input pattern=".{6,}" name="parola_veche" type="password">
                 <br><br><h6>Parola noua <span>*</span></h6>
-                <input pattern=".{6,}" name="parola_noua1" type="text" >
+                <input pattern=".{6,}" name="parola_noua1" type="password">
                 <br><br><h6>Confirma parola noua <span>*</span></h6>
-                <input pattern=".{6,}"  name="parola_noua2" type="text" >
+                <input pattern=".{6,}"  name="parola_noua2" type="password">
             </div>
             <br><input style="margin-bottom: 20%" class="input-submit" type="submit" value="Salvare">
         </form>
     </div>
 </div>
+
 
 <?php
 
