@@ -37,7 +37,6 @@ if(isset($_SESSION['id'])){
         }else if(isset($_GET['info']) && $_GET['info'] == 'email-existent'){
             echo "<h4 style='color: red'>Email-ul este deja existent. <br>Apasa <a style='color: #766cdc' href='login.php'>aici</a> pentru a te authentifica.</h4>";
         }
-
         ?>
 
     </div>
