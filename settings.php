@@ -21,7 +21,10 @@
         echo "<h1 style='color: green;'> Datele au fost schimbate cu succes.</h1>";
     }else if(isset($_GET['info']) && $_GET['info'] == 'parola_incorecta'){
         echo "<h1 style='color:red;'> Parola veche nu este la fel cu cea din baza de date.</h1>";
-
+    }else if(isset($_GET['info']) && $_GET['info'] == 'username_invalid'){
+        echo "<h1 style='color:red;'> Acest username este deja folosit. Scrie altul!</h1>";
+    }else if(isset($_GET['info']) && $_GET['info'] == 'email_invalid'){
+        echo "<h1 style='color:red;'> Acest Email este deja folosit. Scrie altul!</h1>";
     }
 
     ?>

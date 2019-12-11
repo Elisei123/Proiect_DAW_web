@@ -11,7 +11,14 @@ if(isset($_SESSION['id'])){
 <div class="container">
     <div style="padding-top: 10%;" class="spatiu"></div>
     <div style="padding: 10px;" id="login" class="login cases">
-        <h3>Conectează-te la cont:</h3>
+        <?php
+
+        if(isset($_GET['info']) && $_GET['info'] =='deconectare'){
+            echo "<br><h2 style='color: red'>Te-ai deconectat de la cont.</h2>";
+        }
+
+        ?>
+        <br><br><h3>Conectează-te la cont:</h3>
         <form method="post" action="includes/login.inc.php">
             <input type="text" name="Nume" placeholder="Nume"><br>
             <input id="password" type="password" name="Parola" placeholder="Parola"><br>
@@ -27,7 +34,6 @@ if(isset($_SESSION['id'])){
             }else if(isset($_GET['info']) && $_GET['info'] == 'incomplet'){
                 echo "<h4 style='color: red'>Nu ai completat casutele. <br></h4>";
             }
-
         ?>
     </div>
 </div>

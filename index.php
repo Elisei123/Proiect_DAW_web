@@ -13,5 +13,6 @@ if(isset($_SESSION['id'])) {
         ';
     }
     ?>
-    <h1 style="text-align: center; margin-top: 100px"> Base TO-DO list </h1>
+    <br><h3 style="text-align: center; margin-top: 100px"> Base TO-DO list </h3>
 </div>
+

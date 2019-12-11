@@ -36,6 +36,8 @@ if(isset($_SESSION['id'])){
                     <h4>Apasa <a style='color: #dc3f29' href='login.php'>aici</a> pentru a te authentifica.</h4>";
         }else if(isset($_GET['info']) && $_GET['info'] == 'email-existent'){
             echo "<h4 style='color: red'>Email-ul este deja existent. <br>Apasa <a style='color: #766cdc' href='login.php'>aici</a> pentru a te authentifica.</h4>";
+        }else if(isset($_GET['info']) && $_GET['info'] == 'campuri_incomplete'){
+            echo "<h4 style='color: red'>Nu au fost completate campurile.</h4>";
         }
         ?>
 

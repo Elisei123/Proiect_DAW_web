@@ -15,7 +15,7 @@ if(($nume_cont != $_SESSION['username']) || $email != $_SESSION['email']) {
         $result = mysqli_query($conectare, $sql);
         $check = mysqli_num_rows($result);
         if ($check > 0) {
-            echo "Acest username se afla in baza de date. Alege altul";
+            header("Location: ../settings.php?info=username_invalid");
             die();
         }
     }
@@ -24,12 +24,11 @@ if(($nume_cont != $_SESSION['username']) || $email != $_SESSION['email']) {
         $result = mysqli_query($conectare, $sql);
         $check = mysqli_num_rows($result);
         if ($check > 0) {
-            echo "Acest Email se afla in baza de date. Alege altul";
+            header("Location: ../settings.php?info=email_invalid");
             die();
         }
     }
-}else {
-
+}
     $sql = "UPDATE accounts SET Username='$nume_cont', Nume='$nume', Prenume='$prenume', Email = '$email' WHERE ID='$id'";
     $result = mysqli_query($conectare, $sql);
 
@@ -73,4 +72,3 @@ if(($nume_cont != $_SESSION['username']) || $email != $_SESSION['email']) {
         }
     }
     header("Location: ../settings.php?info=Modificate_doar_setarile");
-}
