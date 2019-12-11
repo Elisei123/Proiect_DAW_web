@@ -8,17 +8,32 @@ $prenume = $_POST['Prenume'];
 $email = $_POST['emailaddress'];
 $id = intval($_SESSION['id']);
 
-if(($nume_cont != $_SESSION['username']) || $email != $_SESSION['email']){
-    $sql = "SELECT Username AND Email FROM 'accounts'";
-    $result = mysqli_query($conectare, $sql);
-    $row = $result->fetch_assoc();
-    //TODO: Rezolva cautarea de username si email in baza de date, daca email sau nickname sunt diferite (una din ele);
+if(($nume_cont != $_SESSION['username']) || $email != $_SESSION['email']) {
 
-}else{
-    $sql = "UPDATE Accounts SET Username='$nume_cont', Nume='$nume', Prenume='$prenume', Email = '$email' WHERE ID='$id'";
+    if ($nume_cont != $_SESSION['username']) {
+        $sql = "SELECT Username FROM accounts WHERE Username = '$nume_cont'";
+        $result = mysqli_query($conectare, $sql);
+        $check = mysqli_num_rows($result);
+        if ($check > 0) {
+            echo "Acest username se afla in baza de date. Alege altul";
+            die();
+        }
+    }
+    if ($email != $_SESSION['email']) {
+        $sql = "SELECT Email FROM accounts WHERE Email = '$email'";
+        $result = mysqli_query($conectare, $sql);
+        $check = mysqli_num_rows($result);
+        if ($check > 0) {
+            echo "Acest Email se afla in baza de date. Alege altul";
+            die();
+        }
+    }
+}else {
+
+    $sql = "UPDATE accounts SET Username='$nume_cont', Nume='$nume', Prenume='$prenume', Email = '$email' WHERE ID='$id'";
     $result = mysqli_query($conectare, $sql);
 
-    $sql = "SELECT * FROM `accounts` WHERE ID ='$id'";
+    $sql = "SELECT * FROM accounts WHERE ID ='$id'";
     $result = mysqli_query($conectare, $sql);
     $row = $result->fetch_assoc();
 
@@ -27,32 +42,32 @@ if(($nume_cont != $_SESSION['username']) || $email != $_SESSION['email']){
     $_SESSION['prenume'] = $row['Prenume'];
     $_SESSION['email'] = $row['Email'];
 
-    if(isset($_POST['change_password']) == 1 && !empty($_POST['parola_veche']) && !empty($_POST['parola_noua1']) && !empty($_POST['parola_noua2'])) {
+    if (isset($_POST['change_password']) == 1 && !empty($_POST['parola_veche']) && !empty($_POST['parola_noua1']) && !empty($_POST['parola_noua2'])) {
         $parola_veche = $_POST['parola_veche'];
         $parola_noua = $_POST['parola_noua1'];
         $parola_verificata = $_POST['parola_noua2'];
-        if($parola_noua == $parola_verificata){
-            if($parola_noua == $parola_veche){
+        if ($parola_noua == $parola_verificata) {
+            if ($parola_noua == $parola_veche) {
                 header("Location: ../settings.php?info=identica");
                 die();
-            }else{
+            } else {
                 $sql = "SELECT * FROM `accounts` WHERE ID ='$id'";
                 $result = mysqli_query($conectare, $sql);
                 $row = $result->fetch_assoc();
                 $hash = $row['Parola'];
                 $check = password_verify($parola_veche, $hash);
-                if($check  > 0){
+                if ($check > 0) {
                     $password_hashed = password_hash($parola_noua, PASSWORD_DEFAULT);
                     $sql = "UPDATE Accounts SET Parola = '$password_hashed' WHERE ID='$id'";
                     $result = mysqli_query($conectare, $sql);
                     header("Location: ../settings.php?info=parola_schimbata");
                     die();
-                }else {
+                } else {
                     header("Location: ../settings.php?info=parola_incorecta");
                     die();
                 }
             }
-        }else{
+        } else {
             header("Location: ../settings.php?info=parola_verificare_diferita");
             die();
         }

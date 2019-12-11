@@ -49,13 +49,6 @@
 </div>
 
 
-<?php
-
-// TODO: Verifica daca username si email se afla in baza de date;
-// TODO: !!! Atentie, se afla o singura data !!!;
-
-?>
-
 <script>
     function myFunction() {
         var checkBox = document.getElementById("myCheck");
