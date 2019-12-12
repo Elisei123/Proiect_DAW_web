@@ -57,7 +57,7 @@ if(isset($_GET['delete_id'])){
     <br>
     <h3 style="text-align: center; margin-top: 26px"> Base TO-DO list </h3>
     <form method="post" action="index.php">
-        <input type="text" name="task" class="task_input">
+        <input type="text" name="task" class="task_input" placeholder="Adauga task!">
         <button type="submit" class="task_submit" name="submit">Submit</button>
     </form>
 
@@ -72,23 +72,9 @@ if(isset($_GET['delete_id'])){
 
         $sql = "INSERT INTO tasks (Task, Data_curenta, ID_USER, Efectuat) VALUES ('$task', '$date', '$Username', 'Nu')";
         $result = mysqli_query($conectare, $sql);
-    }else{
-        echo "Campul este gol";
     }
     ?>
-    <div class="table-responsive-md">
-        <table class="table" style="margin-top: 5%;">
-            <thead class="thead-dark">
-            <tr">
-            <th scope="col">#</th>
-            <th scope="col">Data</th>
-            <th class="col-md-6" scope="col">Task</th>
-            <th style="color: #5BD41E" scope="col">Done</th>
-            </tr>
 
-            </thead>
-            <tbody>
-            <tr>
                 <?php
                 //Afisare task-uri.
                 $Username = intval($_SESSION['id']);
@@ -97,6 +83,19 @@ if(isset($_GET['delete_id'])){
                 $contor = 1;
                 if ($result->num_rows > 0){
                     echo "<h4>Succes in rezolvarea task-urilor! <span style='font-size:60px;'>&#129488;</span></h4>";
+                    echo "   
+                <div class=\"table-responsive-md\">
+        <table class=\"table\" style=\"margin-top: 5%;\">
+            <thead class=\"thead-dark\">
+                <tr\">
+                    <th scope=\"col\">#</th>
+                    <th scope=\"col\">Data</th>
+                    <th class=\"col-md-6\" scope=\"col\">Task</th>
+                    <th style=\"color: #5BD41E\" scope=\"col\">Done</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>";
                     while ($row = $result->fetch_assoc()){
                         echo '
                         <th scope="row">' . $contor . '</th>
