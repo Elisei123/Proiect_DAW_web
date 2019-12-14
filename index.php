@@ -11,7 +11,9 @@ if (isset($_SESSION['id'])) {
 if(isset($_GET['delete_id'])){
     $id_pt_sters = intval($_GET['delete_id']);
     $id_user = $_SESSION['id'];
-    $sql = "UPDATE tasks SET Efectuat = 'Da' WHERE ID = '$id_pt_sters' AND ID_USER='$id_user'";
+    date_default_timezone_set('Europe/Bucharest');
+    $date = date("h:i:sa") . " " . date("d-m-Y");
+    $sql = "UPDATE tasks SET Efectuat = 'Da', data_task_efectuat= '$date' WHERE ID = '$id_pt_sters' AND ID_USER='$id_user'";
     $result = mysqli_query($conectare, $sql);
     header('location: index.php');
 }
@@ -70,7 +72,7 @@ if(isset($_GET['delete_id'])){
         $date = date("h:i:sa") . " " . date("d-m-Y");
         $Username = intval($_SESSION['id']);
 
-        $sql = "INSERT INTO tasks (Task, Data_curenta, ID_USER, Efectuat) VALUES ('$task', '$date', '$Username', 'Nu')";
+        $sql = "INSERT INTO tasks (Task, Data_curenta, ID_USER, Efectuat, data_task_efectuat) VALUES ('$task', '$date', '$Username', 'Nu', '$date')";
         $result = mysqli_query($conectare, $sql);
     }
     ?>
