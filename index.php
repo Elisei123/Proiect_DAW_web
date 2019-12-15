@@ -3,7 +3,7 @@
 <?php
 if (isset($_SESSION['id'])) {
     echo "<title>Salut " . ucfirst($_SESSION['username']) . "</title>";
-}
+
 ?>
 
 <?php
@@ -122,4 +122,9 @@ if(isset($_GET['delete_id'])){
 
 
 </div>
+    <?php
+    }else{
+    echo "<h1 style='margin-top: 5%'>Trebuie sa te authentifici pentru a putea folosi pagina.</h1>";
+}
+    ?>
 

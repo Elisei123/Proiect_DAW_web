@@ -1,6 +1,7 @@
 <?php
 include 'base.php';
 include 'includes/conectare.php';
+if(isset($_SESSION['id'])){
 
 $id_user_curent = $_SESSION['id'];
 $sql = "SELECT Task, Data_curenta, data_task_efectuat FROM tasks WHERE ID_USER = '$id_user_curent' AND Efectuat = 'Da' ";
@@ -39,3 +40,4 @@ while ($row = $result->fetch_assoc()) {
 </div>
 </div>
 
+<?php }?>

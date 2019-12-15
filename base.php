@@ -53,8 +53,15 @@ session_start();
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <a class="navbar-brand" href="index.php">To DO LIST</a>
-        <span>***</span>
-        <a class="navbar-brand" href="tasks_solved.php">Task-uri rezolvate.</a>
+        <?php
+
+        if(isset($_SESSION['id'])){
+            echo '
+                    <span>***</span>
+                    <a class="navbar-brand" href="tasks_solved.php">Task-uri rezolvate.</a>
+        ';
+        }
+        ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
