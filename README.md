@@ -3,10 +3,10 @@
 ## MYSQL config
 
 CREATE TABLE accounts (
-    ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Username varchar(255),
-    Nume varchar(255),
-    Prenume varchar(255),
+    ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,\
+    Username varchar(255),\
+    Nume varchar(255),\
+    Prenume varchar(255),\
     Email varchar(255),
     Parola varchar(255)
 );
