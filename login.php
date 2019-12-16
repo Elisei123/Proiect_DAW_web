@@ -20,7 +20,7 @@ if(isset($_SESSION['id'])){
         ?>
         <br><br><h3>Conectează-te la cont:</h3>
         <form method="post" action="includes/login.inc.php">
-            <input type="text" name="Nume" placeholder="Nume"><br>
+            <input type="text" name="Nume" placeholder="Nickname"><br>
             <input id="password" type="password" name="Parola" placeholder="Parola"><br>
             <span>Vezi parola </span><input type="checkbox" id="box" onclick ="VerificareBifa()"><br>
             <input class="input-submit" type="submit" value="Login">
@@ -33,6 +33,8 @@ if(isset($_SESSION['id'])){
                 echo "<h4 style='color: red'>Parola este gresita. <br></h4>";
             }else if(isset($_GET['info']) && $_GET['info'] == 'incomplet'){
                 echo "<h4 style='color: red'>Nu ai completat casutele. <br></h4>";
+            }else if(isset($_GET['info']) && $_GET['info'] == 'cont_inexistent'){
+                echo "<h4 style='color: red'>Contul nu exista. <br></h4>";
             }
         ?>
     </div>

@@ -2,13 +2,19 @@
 include 'base.php';
 include 'includes/conectare.php';
 if(isset($_SESSION['id'])){
+    ?>
+    <form action="includes/clear_history.inc.php" method="post">
+       <button style='margin-top: 2%' name="clear_history">Sterge istoricul.</button>
+    </form>
+
+    <?php
 
 $id_user_curent = $_SESSION['id'];
 $sql = "SELECT Task, Data_curenta, data_task_efectuat FROM tasks WHERE ID_USER = '$id_user_curent' AND Efectuat = 'Da' ";
 $result = mysqli_query($conectare, $sql);
 $contor = 1;
 echo "   
-   <h2 style='margin-top: 5%'>Lista task-uri rezolvate.</h2>
+   <h2 style='margin-top: 2%'>Lista task-uri rezolvate.</h2>
    <div class='container'>
                 <div class=\"table-responsive-md\">
         <table class=\"table\" style=\"margin-top: 5%;\">
