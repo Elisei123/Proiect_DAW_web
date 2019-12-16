@@ -18,8 +18,8 @@ CREATE TABLE tasks (\
     Data_curenta varchar(255),\
     ID_USER int(255),\
     Efectuat varchar(255),\
-    data_task_efectuat varchar(255)\
-);\
+    data_task_efectuat varchar(255)
+);\=
 
 
 
