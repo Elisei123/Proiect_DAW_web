@@ -2,6 +2,8 @@
 include "conectare.php";
 session_start();
 
+if(isset($_SESSION['id'])){
+
 $nume_cont = $_POST['Numele_Contului'];
 $nume = $_POST['Nume'];
 $prenume = $_POST['Prenume'];
@@ -72,3 +74,6 @@ if(($nume_cont != $_SESSION['username']) || $email != $_SESSION['email']) {
         }
     }
     header("Location: ../settings.php?info=Modificate_doar_setarile");
+}else{
+    header("Location: ../index.php");
+}
